@@ -3,6 +3,6 @@
 ## TO-DO:
 - [x] Node Website Tutorial - Instalation and configuration
 - [x] Lab Guide for HTML
-- [ ] Lab Guide for CSS
+- [x] Lab Guide for CSS
 - [ ] Lab Guide for Node.js
 
