@@ -6,3 +6,103 @@ body {
 a {
   color: #00B7FF;
 }
+.flex-header,footer {
+  display: flex;
+  background-color: blueviolet;
+  align-items: center;
+  color: white;
+} 
+
+#profile-icon {
+  width: 200px;
+}
+
+
+.flex-image {
+  flex:1;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.flex-titles {
+  flex:8;
+  padding-right: 100px;
+  text-align: center;
+  }
+
+.link-nav {
+  color: white;
+  text-decoration: none;
+}
+
+.link-site {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+.main {
+  color: #333333;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% auto auto auto auto 20%;
+  grid-template-areas:
+  'header header header header header header'
+  'nav main main main main sites'
+  'footer footer footer footer footer footer';
+}
+
+.grid-item-header {
+  grid-column: 1 / 4;
+  grid-area:header;
+}
+
+.grid-item-footer {
+  grid-column: 1 / 4;
+  grid-area:footer;
+}
+
+.grid-item-main {
+  grid-area:main;
+}
+
+.grid-item-nav {
+  grid-area:nav;
+  background-color: blueviolet;
+  color: white;
+  padding: 10px;
+  flex:1;
+  line-height: 5px;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.grid-item-sites {
+  grid-area:sites;
+  display:flex;
+  flex:1;
+  background-color: white;
+  border-style: solid;
+  border-color: blueviolet;
+  flex-direction: column;
+  line-height: 0.8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+
+}
+
+
+  #contact-information {
+    padding-left: 100px;
+  }
+
