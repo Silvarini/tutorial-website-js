@@ -4,5 +4,6 @@
 - [x] Node Website Tutorial - Instalation and configuration
 - [x] Lab Guide for HTML
 - [x] Lab Guide for CSS
-- [ ] Lab Guide for Node.js
+- [ ] Tutorial de Java-script: Variáveis, DOM e forms
+- [ ] Tutoriais de Java-script: lists, objects, functions, storage and json
 
