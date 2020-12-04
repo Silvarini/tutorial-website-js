@@ -1,0 +1,60 @@
+h1 {
+    font-size: 1em;
+}
+
+h2 {
+    font-size: 0.8em;
+}
+
+#grades{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gradingSections{
+    background-color:mediumaquamarine;
+    color:firebrick;
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.50em;
+
+}
+
+p {
+    font-size: 12px;
+}
+
+
+
+.unitSection {
+    display: flex;
+    flex-direction: row;
+    min-width:157.72px;
+}
+
+.gradeSection {
+    padding-left: 30%;
+}
+
+.icon-class {
+    background-color:brown;
+    font-size: 30px;
+    color:white;
+    padding:5px;
+}
+
+.unit-title{
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.failed{
+    background-color: salmon;
+    color:firebrick;
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.50em;
+}
