@@ -1,15 +1,12 @@
-h1 {
-    font-size: 1em;
-}
 
-h2 {
-    font-size: 0.8em;
-}
+
 
 #grades{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    grid-area:main;
+    flex-wrap:wrap;
+
 }
 
 .gradingSections{
@@ -19,36 +16,12 @@ h2 {
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.50em;
+    grid-row: 1;
+    min-width: 200px;
 
 }
 
-p {
-    font-size: 12px;
-}
 
-
-
-.unitSection {
-    display: flex;
-    flex-direction: row;
-    min-width:157.72px;
-}
-
-.gradeSection {
-    padding-left: 30%;
-}
-
-.icon-class {
-    background-color:brown;
-    font-size: 30px;
-    color:white;
-    padding:5px;
-}
-
-.unit-title{
-    padding-top: 20px;
-    padding-left: 5px;
-}
 
 .failed{
     background-color: salmon;
@@ -57,4 +30,56 @@ p {
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 0.50em;
+    grid-row: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 12px;
+}
+
+
+#icon {
+    background-color:brown;
+    font-size: 30px;
+    color:white;
+    padding:5px;
+    max-width: 44.67px;
+}
+
+
+.grid-item-nav, details {
+    grid-area:nav;
+    background-color: white;
+    border-style: solid;
+    border-color: blueviolet;
+    flex-direction: row;
+    line-height: 0.8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+#top-of-slot{
+    flex: 1;
+    display: flex;
+}
+
+#bottom-of-slot {
+    flex: 1;
+}
+
+#unit-grade {
+    padding-left: 5px;
+    padding-top: 20px;
+    font-size:  0.5em;
+}
+
+details > p {
+    padding: 4px;
+    padding-top: 10px;
+    margin: 5px;
 }

@@ -38,7 +38,7 @@ h1 {
   text-decoration: none;
 }
 
-.link-site {
+.link-site,details {
   color: blueviolet;
   text-decoration: none;
 }
@@ -71,10 +71,9 @@ h1 {
   grid-area:main;
 }
 
-.grid-item-nav {
+.grid-item-nav, details {
   grid-area:nav;
   background-color: blueviolet;
-  color: white;
   padding: 10px;
   flex:1;
   line-height: 5px;

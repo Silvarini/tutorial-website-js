@@ -1,28 +1,75 @@
 var studentName = "John Smith";
-var studentGrades1 = {
-    unit: "Mathematics",
-    grade: "7.5",
+
+var mathematics = ["Mathematics", 8.3, "3º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
+var literature = ["Literature", 11.2, "2º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
+var laws = ["Laws", 18.5, "1º semester", "3 ETCS"]; // [Unite, Grade, Semester, ETCS]
+var informatics = ["Informatics", 14.3, "1º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
+var cooking = ["Cooking", 7.4, "2º semester", "3 ETCS"]; // [Unite, Grade, Semester, ETCS]
+
+var units = [mathematics, literature, laws, informatics, cooking];
+
+
+function validation(object) {
+    let aux = '';
+    if (object[1] < 9.5){
+        aux = 'class = "failed"';
+    }
+    return aux;
 }
-var studentGrades2 = {
-    unit: "Literature",
-    grade: "11.2",
+
+function unit(n){ // returns an object's array from the array of units.
+    for (let i = 0; i < units.length; i++){
+        aux = units[i];
+        if (n == i){
+            return aux;
+        }
+    }
 }
-res1 = studentGrades1.unit.substring(0, 2);
-res2 = studentGrades2.unit.substring(0, 2);
+
+
+function unitSlot(object) { // returns all unit squares with their information for main tag.
+    sum = "";
+    for (let i = 0; i < object.length; i++){
+    aux = unit(i);
+    icon = aux[0].substring(0, 2);
+    slot =
+    '<section '+validation(aux)+'class = "gradingSections">'+'<section id="top-of-slot"><h1 id="icon">'+icon+'</h1><section id="unit-grade"><h1>'+aux[0]+'</h1>'+'<p>Grade: '+aux[1]+'</p></section></section><section id="bottom-of-slot"><p>Semester: '+aux[2]+'</p><p>ETCS: '+aux[3]+'</p></section></section>';
+    sum = sum + slot;
+    }
+    return sum;
+    
+}
 
 
 
 window.onload =  function () {
+   
     document.getElementById('student');
     student.innerText = studentName + " grades";
 
+    document.getElementById('grades');
+    grades.innerHTML = unitSlot(units);
 
-    let aux = '';
-    if (studentGrades1.grade < 9.5){
-        aux = 'class = "failed"';
+
+    failed = 0;
+    passed = 0;
+    sum = 0;
+    for (let i = 0; i < units.length; i++){
+        aux = unit(i);
+        if (aux[1]< 9.5){
+            sum = sum;
+            failed++;
+        } else {
+        sum = sum + aux[1];
+        passed++;
+        }
     }
 
-    document.getElementById('grades');
-    grades.innerHTML = 
-    '<section '+aux+'class = "gradingSections"><section class = "unitSection">'+'<h1 class = "icon-class">'+res1+'</h1><h1 class = "unit-title">'+studentGrades1.unit+'</h1></section>'+'<section class = "gradeSection"><p>Grade: '+studentGrades1.grade+'</p></section></section>'+'<section class = "gradingSections"><section class = "unitSection">'+'<h1 class = "icon-class">'+res2+'</h1><h1 class = "unit-title">'+studentGrades2.unit+'</h1></section>'+'<section class = "gradeSection"><p>Grade: '+studentGrades2.grade+'</p></section></section>';
+    average = 0;
+    average = sum / passed;
+
+
+    document.getElementById('summary');
+    summary.innerHTML = '<summary><b>Average: '+average.toFixed(1)+'</summary><p>'+failed+' failed units</p><p>'+passed+' passed units</p></b>';
+    
 } 
