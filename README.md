@@ -5,6 +5,10 @@
 - [x] Lab Guide for HTML
 - [x] Lab Guide for CSS
 - [x] Lab Guide for Javascript 1 - Variables and forms
-- [ ] Lists, objects, loops and functions
+- [x] Lab Guide for Javascript 2 - Lists, objects, loops and functions
 - [ ] Lab Guide for Javascript 3 - Storage and json
+- [ ] Lab Guide for Node_Express 1 - Routes and REST
+- [ ] Lab Guide for Node_Express 2 - Mysql
+
+
 
