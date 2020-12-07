@@ -1,3 +1,18 @@
 header{
     padding-bottom: 20px;
 }
+
+#error-project{
+    display: none;
+    color:red;
+}
+
+#error-test{
+    display: none;
+    color:red;
+}
+
+#error-percentage{
+    display: none;
+    color:red;
+}

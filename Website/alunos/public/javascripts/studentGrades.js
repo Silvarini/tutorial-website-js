@@ -1,42 +1,42 @@
-var studentName = "John Smith";
 
-var mathematics = ["Mathematics", 8.3, "3º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
-var literature = ["Literature", 11.2, "2º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
-var laws = ["Laws", 18.5, "1º semester", "3 ETCS"]; // [Unite, Grade, Semester, ETCS]
-var informatics = ["Informatics", 14.3, "1º semester", "6 ETCS"]; // [Unite, Grade, Semester, ETCS]
-var cooking = ["Cooking", 7.4, "2º semester", "3 ETCS"]; // [Unite, Grade, Semester, ETCS]
+let listOfUnits=[
+    [
+        {name: "Mathematics", grade: 8.3, semester: "3º semester", etcs: "6 ETCS"},
+        {name: "Literature", grade: 11.2, semester: "2º semester", etcs: "6 ETCS"},
+        {name: "Laws", grade: 18.5, semester: "1º semester", etcs: "3 ETCS"},
+        {name:"Informatics", grade: 14.3, semester: "1º semester", etcs: "6 ETCS"},
+        {name: "Cooking", grade: 7.4, semester: "2º semester", etcs: "3 ETCS"}, 
+    ],
+    [
+        {name: "Mathematics", grade: 10.3, semester: "3º semester", etcs: "6 ETCS"},
+        {name: "Literature", grade: 9.2, semester: "2º semester", etcs: "6 ETCS"},
+        {name: "Laws", grade: 8.5, semester: "1º semester", etcs: "3 ETCS"},
+    ],
+    [
+        {name: "Mathematics", grade: 15.3, semester: "3º semester", etcs: "6 ETCS"},
+        {name: "Laws", grade: 6.5, semester: "1º semester", etcs: "3 ETCS"},
+    ],
+]
 
-var units = [mathematics, literature, laws, informatics, cooking];
 
-
-function validation(object) {
+function validation(num) {
     let aux = '';
-    if (object[1] < 9.5){
+    if (num < 9.5){
         aux = 'class = "failed"';
     }
     return aux;
 }
 
-function unit(n){ // returns an object's array from the array of units.
-    for (let i = 0; i < units.length; i++){
-        aux = units[i];
-        if (n == i){
-            return aux;
-        }
-    }
-}
 
-
-function unitSlot(object) { // returns all unit squares with their information for main tag.
-    sum = "";
-    for (let i = 0; i < object.length; i++){
-    aux = unit(i);
-    icon = aux[0].substring(0, 2);
-    slot =
-    '<section '+validation(aux)+'class = "gradingSections">'+'<section id="top-of-slot"><h1 id="icon">'+icon+'</h1><section id="unit-grade"><h1>'+aux[0]+'</h1>'+'<p>Grade: '+aux[1]+'</p></section></section><section id="bottom-of-slot"><p>Semester: '+aux[2]+'</p><p>ETCS: '+aux[3]+'</p></section></section>';
-    sum = sum + slot;
+function unitSlot(list, position) { // returns all unit squares with their information for main tag.
+    slot = "";
+    let units = list[position];
+    for (let unit of units){
+        icon = unit.name.substring(0,2);
+        slot +=
+        '<section '+validation(unit.grade)+'class = "gradingSections">'+'<section id="top-of-slot"><h1 id="icon">'+icon+'</h1><section id="unit-grade"><h1>'+unit.name+'</h1>'+'<p>Grade: '+unit.grade+'</p></section></section><section id="bottom-of-slot"><p>Semester: '+unit.semester+'</p><p>ETCS: '+unit.etcs+'</p></section></section>';
     }
-    return sum;
+    return slot;
     
 }
 
@@ -44,23 +44,25 @@ function unitSlot(object) { // returns all unit squares with their information f
 
 window.onload =  function () {
    
+    let studentName = sessionStorage.getItem("studentName");
     document.getElementById('student');
     student.innerText = studentName + " grades";
 
+    position = sessionStorage.getItem("itemPos");
     document.getElementById('grades');
-    grades.innerHTML = unitSlot(units);
+    grades.innerHTML = unitSlot(listOfUnits,position);
 
 
-    failed = 0;
+    failed = 0; 
     passed = 0;
     sum = 0;
-    for (let i = 0; i < units.length; i++){
-        aux = unit(i);
-        if (aux[1]< 9.5){
+    let units = listOfUnits[position];
+    for (let unit of units){
+        if (unit.grade< 9.5){
             sum = sum;
             failed++;
         } else {
-        sum = sum + aux[1];
+        sum = sum + unit.grade;
         passed++;
         }
     }

@@ -1,0 +1,16 @@
+main{
+    display: flex;
+    justify-content: flex-start;
+    grid-area:main;
+    flex-wrap:wrap;
+}
+
+.student-slot{
+    background-color:#99ddff;
+    color:blueviolet;
+    margin: 1em;
+    padding: 40px;
+    grid-row: 1;
+    min-width: 200px;
+}
+
