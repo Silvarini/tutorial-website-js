@@ -14,10 +14,11 @@ router.get('/:pos', async function(req,res,next) {
 });
 
 
-router.put('/:pos/grades', async function(req,res,next) {
+router.put('/:studentId/grades/:unitId', async function(req,res,next) {
     let obj = req.body;
-    let pos = req.params.pos;
-    let result = await lStudents.saveGrade(pos,obj);
+    let studentId = req.params.studentId;
+    let unitId = req.params.unitId;
+    let result = await lStudents.saveGrade(studentId, unitId, obj);
     res.send(result);
 });
 
