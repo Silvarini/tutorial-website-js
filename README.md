@@ -8,7 +8,7 @@
 - [x] Lab Guide for Javascript 2 - Lists, objects, loops and functions
 - [x] Lab Guide for Javascript 3 - Storage and json
 - [x] Lab Guide for Node_Express 1 - Routes and REST
-- [ ] Lab Guide for Node_Express 2 - Mysql
+- [x] Lab Guide for Node_Express 2 - Mysql
 
 
 
